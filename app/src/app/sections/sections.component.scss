@@ -1,0 +1,28 @@
+#main {
+  padding: 40px 0;
+  a {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  ul {
+    list-style: none;
+    li {
+      margin-bottom: 10px;
+      background-color: #1976d2;
+      border-radius: 5px;
+      a {
+        color: #fff;
+        padding: 10px;
+        display: block;
+        text-decoration: none;
+      }
+    }
+    .active-link {
+      background-color: #fedd00;
+      transition: background-color 0.2s ease-in-out;
+      a {
+        color: #111;
+      }
+    }
+  }
+}

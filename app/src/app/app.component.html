@@ -1,0 +1,34 @@
+<app-header></app-header>
+<app-sections></app-sections>
+
+<div class="main">
+  <h1>Test post from wordpress</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <ul>
+          <li *ngFor="let post of posts" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"><a routerLink="{{post.title.rendered}}">{{post.title.rendered}}</a></li>
+        </ul>
+      </div>
+      <div class="col-9">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
+  <ul>
+    <li *ngFor="let post of posts">
+      <div class="container">
+        <div class="row">
+          <div class="col-2">{{ post.title.rendered }}</div>
+          <div class="col-3">
+            <img [src]="post._embedded['wp:featuredmedia'][0].source_url" alt="">
+          </div>
+          <div class="col-7"><p>{{ post.content.rendered }}</p></div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+</div>
+
